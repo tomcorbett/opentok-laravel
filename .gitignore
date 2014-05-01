@@ -1,16 +1,8 @@
-# Bootstrap
-app/bootstrap*
-
-# Symfony directories
-vendor/*
-*/logs/*
-*/cache/*
-web/uploads/*
-web/bundles/*
-
-# Configuration files
-app/config/parameters.ini
-app/config/parameters.yml
+/bootstrap/compiled.php
+/vendor
+composer.phar
+composer.lock  # Should consider removing this one, however
+.DS_Store
 
 # Composer
 composer.phar
