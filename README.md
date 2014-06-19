@@ -26,13 +26,11 @@ Get your api\_key and api\_secret from your OpenTok account and replace the plac
       'api_key' => 'API_KEY',
 
       /**
-      * put yourAPI secret in here
+      * put your API secret in here
       */	
       'api_secret' => 'API_SECRET',
     );
   ```
-
-That's it! You're ready to go!
 
 ### Before you dive in...
 
