@@ -1,6 +1,7 @@
 <?php namespace Tomcorbett\OpentokLaravel;
 
 use Illuminate\Support\ServiceProvider;
+use OpenTok\OpenTok;
 use \Config;
 
 class OpentokLaravelServiceProvider extends ServiceProvider {
@@ -36,7 +37,7 @@ class OpentokLaravelServiceProvider extends ServiceProvider {
             $api_secret = Config::get('opentok-laravel::api_secret');
         
             // create new instance of SDK
-            $openTokApi = new \OpenTokSDK($api_key, $api_secret);
+            $openTokApi = new OpenTok($api_key, $api_secret);
 
             // return pusher
             return $openTokApi;
