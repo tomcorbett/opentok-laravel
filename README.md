@@ -43,13 +43,12 @@ It's definitely a good idea to get to grips with the general flow, the technolog
 First you need to create a session so your subscribers and/or publishers have something to assiciate with
 ```php
 // new session
-$session = OpentokApi::createSession();
-            
+$session    = OpentokApi::createSession();            
+$sessionId  = $session->getSessionId();
+
 // check if it's been created or not (could have failed)
-if (!empty($session->sessionId)) {
-    $sessionId = $session->sessionId;
-} else {
-    throw new Exception("An open tok session could not be created");
+if (empty($sessionId)) {
+    throw new \Exception("An open tok session could not be created");
 }
 ```
 
@@ -67,7 +66,11 @@ $api_key = Config::get('opentok-laravel::api_key');
 // then create a token (session created in previous step)
 try {
     // note we're create a publisher token here, for subscriber tokens we would specify.. yep 'subscriber' instead
-    $token = OpentokApi::generate_token($sessionId, 'publisher');
+    $token = OpentokApi::generateToken($sessionId,
+        array(
+            'role' => Role::PUBLISHER
+        )
+    );
 } catch(OpenTokException $e) {
     // do something here for failure
 }
