@@ -11,10 +11,16 @@
             "email": "thomas.michael.corbett@gmail.com"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/Hitlabs/OpenTok-PHP-SDK"
+        }
+    ],
     "require": {
         "php": ">=5.4.0",
         "illuminate/support": "5.0.x|5.1.x|5.2.x",
-        "opentok/opentok": "2.2.x"
+        "opentok/opentok": "dev-hitlabs"
     },
     "autoload": {
         "psr-4": {
