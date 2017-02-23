@@ -27,7 +27,7 @@ class ServiceProvider extends BaseServiceProvider {
     {
         $this->publishes([$this->configPath() => config_path('opentok.php')], 'config');
 
-		$this->app['OpentokApi'] = $this->app->share(function($app) {
+        $this->app->singleton('OpentokApi', function($app) {
 			return new OpenTok(
 				$app['config']->get('opentok')['api_key'],
 				$app['config']->get('opentok')['api_secret']
