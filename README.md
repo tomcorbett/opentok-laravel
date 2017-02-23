@@ -22,11 +22,11 @@ Instead, you may of course manually update your require block and run `composer 
 
 Once OpenTok Laravel is installed, you need to register the service provider. Open up `config/app.php` and add the following to the `providers` key.
 
-* `'Tomcorbett\OpentokLaravel\ServiceProvider'`
+* `Tomcorbett\OpentokLaravel\ServiceProvider::class`
 
 You can register the OpentokApi facade in the `aliases` key of your `config/app.php` file if you like.
 
-* `'OpentokApi' => 'Tomcorbett\OpentokLaravel\Facades\OpentokApi'`
+* `'OpentokApi' => Tomcorbett\OpentokLaravel\Facades\OpentokApi::class`
 
 ### Configuration
 
@@ -65,7 +65,7 @@ use OpenTok\Role;
 use OpenTokException;
 
 // get your API key from config
-$api_key = Config::get('opentok-laravel::api_key');
+$api_key = Config::get('opentok.api_key');
         
 // then create a token (session created in previous step)
 try {
